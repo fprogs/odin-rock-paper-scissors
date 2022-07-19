@@ -1,6 +1,11 @@
-function getComputerChoice() {
-    let choices = ["Rock", "Paper", "Scissors"];
-    let choice = Math.floor(Math.random() * 3);
-    return choices[choice];
+const CHOICES = ["Rock", "Paper", "Scissors"];
+
+function getChoice(selection) {
+    return CHOICES[selection]
 }
+
+function getComputerChoice() {
+    return getChoice(Math.floor(Math.random() * 3));
+}
+
 
