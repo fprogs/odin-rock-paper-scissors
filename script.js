@@ -44,10 +44,7 @@ function game() {
             playerWinCount++;
         } else if (message.includes("lose")) {
             computerWinCount++;
-        } else {
-            playerWinCount++;
-            computerWinCount++;
-        }
+        } 
         console.log(`Round ${i + 1}: ${message}`);
     }
     if (playerWinCount === computerWinCount) {
