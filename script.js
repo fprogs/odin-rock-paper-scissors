@@ -32,6 +32,13 @@ function playRound(playerSelection, computerSelection) {
     return message;
 }
 
+function determineWinner(playerWinCount, computerWinCount) {
+    message = playerWinCount === computerWinCount ? "It's a tie!"
+            : playerWinCount > computerWinCount ? "You win!"
+            : "You lose!";
+    return message; 
+}
+
 function game() {
     let playerWinCount = 0;
     let computerWinCount = 0;
@@ -56,13 +63,7 @@ function game() {
         console.log(`Round ${round + 1}: ${message}`);
         round++;
     }
-    if (playerWinCount === computerWinCount) {
-        console.log("It's a tie!");
-    } else if (playerWinCount > computerWinCount) {
-        console.log("You win!");
-    } else {
-        console.log("You lose!");
-    }
+    console.log(determineWinner(playerWinCount, computerWinCount)); 
 }
 
 game();
