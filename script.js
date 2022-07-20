@@ -35,8 +35,16 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     let playerWinCount = 0;
     let computerWinCount = 0;
-    for (let i = 0; i < GAME_ROUNDS; i++) {
+    let round = 0;
+    while (round < GAME_ROUNDS) {
         const userInput = prompt("Enter choice (rock: 0, paper: 1, scissors: 2): ");
+        if (isNaN(userInput) || userInput === null || userInput.trim() === "") {
+            console.log("user input must be an integer");
+            continue;
+        } else if (+userInput < 0 || +userInput > 2) {
+            console.log("valid choices are only (rock: 0, paper: 1, scissors: 2)");
+            continue;
+        }
         const playerSelection = +userInput;
         const computerSelection = getComputerChoice();
         let message = playRound(playerSelection, computerSelection);
@@ -45,7 +53,8 @@ function game() {
         } else if (message.includes("lose")) {
             computerWinCount++;
         } 
-        console.log(`Round ${i + 1}: ${message}`);
+        console.log(`Round ${round + 1}: ${message}`);
+        round++;
     }
     if (playerWinCount === computerWinCount) {
         console.log("It's a tie!");
