@@ -1,15 +1,10 @@
-const ROCK = "Rock";
-const PAPER = "Paper";
-const SCISSORS = "Scissors";
-const CHOICES = [ROCK, PAPER, SCISSORS];
+const ROCK = 0;
+const PAPER = 1;
+const SCISSORS = 2
 const GAME_ROUNDS = 5;
 
-function getChoice(selection) {
-    return CHOICES[selection];
-}
-
 function getComputerChoice() {
-    return getChoice(Math.floor(Math.random() * 3));
+    return Math.floor(Math.random() * 3);
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -19,25 +14,19 @@ function playRound(playerSelection, computerSelection) {
     } else {
         switch (playerSelection) {
             case ROCK:
-                if (computerSelection === SCISSORS) {
-                    message = "You win! Rock beats Scissors";
-                } else {
-                    message = "You lose! Paper beats Rock";
-                }
+                message = computerSelection === SCISSORS 
+                        ? "You win! Rock beats Scissors"
+                        : "You lose! Paper beats Rock";
                 break;
             case PAPER:
-                if (computerSelection === ROCK) {
-                    message = "You win! Paper beats Rock";
-                } else {
-                    message = "You lose! Scissors beats Paper";
-                }
+                message = computerSelection === ROCK
+                        ? "You win! Paper beats Rock"
+                        : "You lose! Paper beats Rock";
                 break;
             case SCISSORS:
-                if (computerSelection === PAPER) {
-                    message = "You win! Scissors beats Paper";
-                } else {
-                    message = "You lose! Rock beats Scissors";
-                }
+                message = computerSelection === PAPER
+                        ? "You win! Scissors beats Paper"
+                        : "You lose! Rock beats Scissors";
         }
     }
     return message;
@@ -48,7 +37,7 @@ function game() {
     let computerWinCount = 0;
     for (let i = 0; i < GAME_ROUNDS; i++) {
         const userInput = prompt("Enter choice (rock: 0, paper: 1, scissors: 2): ");
-        const playerSelection = getChoice(+userInput);
+        const playerSelection = +userInput;
         const computerSelection = getComputerChoice();
         let message = playRound(playerSelection, computerSelection);
         if (message.includes("win")) {
