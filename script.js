@@ -54,7 +54,7 @@ function game() {
         }
         const playerSelection = +userInput;
         const computerSelection = getComputerChoice();
-        let message = playRound(playerSelection, computerSelection);
+        const message = playRound(playerSelection, computerSelection);
         if (message.includes("win")) {
             playerWinCount++;
         } else if (message.includes("lose")) {
