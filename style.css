@@ -3,10 +3,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #181818;
+  color: #eee;
 }
 
 h1 {
-  margin: 0;
+  margin-top: -20px;
+  margin-bottom: 20px;
   font-size: 3rem;
 }
 
@@ -16,6 +19,11 @@ span {
 
 .container {
   margin-top: 70px;
+  padding: 50px;
+  border: 1px solid #0f0f0f;
+  border-radius: 10px;
+  box-shadow: 4px 4px black;
+  background: #212121;
 }
 
 .score {
@@ -23,6 +31,7 @@ span {
   justify-content: space-evenly;
   text-align: center;
   font-size: 4rem;
+  margin-bottom: 20px;
 }
 
 .score .label {
@@ -32,6 +41,7 @@ span {
 #result {
   text-align: center;
   font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
 .choices {
@@ -41,4 +51,9 @@ span {
 .choices button {
   padding: 4px 30px;
   font-size: 1rem;
+  background: #2F2F2F;
+  border: none;
+  border-radius: 6px;
+  margin-left: 10px;
+  color: #eee;
 }
