@@ -68,7 +68,7 @@ function playRound(playerSelection, computerSelection) {
       case PAPER:
         message = computerSelection === ROCK
                 ? 'You win! Paper beats Rock'
-                : 'You lose! Paper beats Rock';
+                : 'You lose! Scissors beats Paper';
         break;
       case SCISSORS:
         message = computerSelection === PAPER
